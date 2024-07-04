@@ -1,6 +1,6 @@
 # Users_WorkShop
 
-# User Management Microservice
+# Shopping User Microservice
 
 Este repositorio contiene el código fuente de un microservicio de gestión de usuarios para una tienda online, desarrollado con Java Spring Boot. El microservicio permite gestionar operaciones relacionadas con usuarios, como crear usuarios nuevos, obtener información de usuarios existentes, actualizar datos de usuarios y eliminar usuarios.
 
