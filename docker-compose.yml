@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+
+  dbUsers:
+    image: mysql:8.0
+    container_name: mysql_db_users
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: userroot
+      MYSQL_DATABASE: UsersDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data_users:/var/lib/mysql
+
+  dbCatalog:
+    image: mysql:8.0
+    container_name: mysql_db_catalog
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: catalogroot
+      MYSQL_DATABASE: CatalogDB
+      MYSQL_USER: catalog
+      MYSQL_PASSWORD: catalog
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data_catalog:/var/lib/mysql
+
+  dbOrders:
+    image: mysql:8.0
+    container_name: mysql_db_orders
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: userroot
+      MYSQL_DATABASE: OrdersDB
+      MYSQL_USER: orders
+      MYSQL_PASSWORD: orders
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data_orders:/var/lib/mysql
+
+  dbCart:
+    image: mysql:8.0
+    container_name: mysql_db_cart
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: userroot
+      MYSQL_DATABASE: CartDB
+      MYSQL_USER: cart
+      MYSQL_PASSWORD: cart
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data_cart:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8081:8080"
+
+volumes:
+  db_data_users:
+  db_data_catalog:
+  db_data_orders:
+  db_data_cart:

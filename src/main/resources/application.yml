@@ -1,0 +1,33 @@
+server:
+  servlet:
+    context-path: /
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: users
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://34.175.164.238/UsersDB
+    username: user
+    password: user
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+catalog:
+  url: https://catalog-workshop-yequy5sv5a-uc.a.run.app/catalog
+  products-by-ids: /products/byIds
+
+cart:
+  url: https://cart-workshop-6scgqhxaoa-uc.a.run.app
+  create-cart: /carts/
+
+retryable:
+  max-attempts: 3
+  backoff: 1000
+

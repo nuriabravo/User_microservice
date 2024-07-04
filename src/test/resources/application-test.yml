@@ -1,0 +1,33 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  application:
+    name: users
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:users
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: false
+  sql:
+    init:
+      mode: always
+catalog:
+  url: http://localhost:8081
+  products-by-ids: /products/byIds
+cart:
+  url: http://localhost:8081
+  create-cart: /carts/
+
+retryable:
+  max-attemps: 3
+  backoff: 1000
